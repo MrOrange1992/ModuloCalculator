@@ -1,5 +1,6 @@
 package swengb.rauchenwald.modulocalculator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -41,4 +42,13 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    public void showAbout(View view)
+    {
+        Intent intent = new Intent(this, DisplayAboutActivity.class);
+        String message = txtViewResultRemainder.getText().toString();
+        intent.putExtra("resultOfCalculation", message);
+        startActivity(intent);
+    }
+
 }
